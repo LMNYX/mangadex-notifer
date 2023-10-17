@@ -39,5 +39,13 @@ const defaultConfig = {
         "token": "",
         "owner_id": "000000000"
     },
-    "database": []
+    "database": [
+        {
+            "channel_id": "000000000",
+            "ping_message": "HELLO @everyone MANGA $1",
+            "manga_id": "000000000",
+            "last_chapter": "000000000",
+            "ignore": true
+        }
+    ]
 }
