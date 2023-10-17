@@ -1,1 +1,1 @@
-# http-server-template-ts
+# MangaDex Discord Notifier
