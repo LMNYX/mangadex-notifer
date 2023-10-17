@@ -28,6 +28,19 @@ export default class Config
                 Output.Warn("Created backup of config file and replaced with default config.");
             }
         }
+
+        if (this.performDefaultCheck())
+        {
+            Output.Warn("Default config detected! Please fill out the config file.");
+            process.exit(1);
+        }
+    }
+
+    protected performDefaultCheck():boolean
+    {
+        return this.config.mangadex.apiToken === "" ||
+        this.config.discord.token === "" ||
+        this.config.discord.owner_id === "000000000";
     }
 }
 
