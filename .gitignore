@@ -45,3 +45,5 @@ yarn.lock
 config.yml
 
 pnpm-lock.yaml
+
+.vscode
