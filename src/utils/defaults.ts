@@ -1,3 +1,5 @@
+import { ClientOptions, GatewayIntentBits } from "discord.js";
+
 export const config = {
     "mangadex": {
         "apiToken": ""
@@ -14,5 +16,15 @@ export const config = {
             "last_chapter": 374,
             "ignore": true
         }
+    ]
+}
+
+export const discordClientConfig: ClientOptions = {
+    "intents": [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMessageReactions,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildPresences
     ]
 }
