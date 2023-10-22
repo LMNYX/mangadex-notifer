@@ -54,8 +54,7 @@ export default class Config
 
     protected performDefaultCheck():boolean
     {
-        return this.config.mangadex.apiToken === "" ||
-        this.config.discord.token === "" ||
+        return this.config.discord.token === "" ||
         this.config.discord.owner_id === "000000000";
     }
 }
