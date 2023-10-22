@@ -11,6 +11,7 @@
     "paths": {
       "@mangadex/*": ["./src/mangadex/*"],
       "@utils/*": ["./src/utils/*"],
+      "@discord/*": ["./src/discord/*"]
     },
 
     "outDir": "./dist",  
