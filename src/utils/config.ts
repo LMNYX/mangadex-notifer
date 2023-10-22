@@ -37,6 +37,21 @@ export default class Config
         }
     }
 
+    public get discord()
+    {
+        return this.config.discord;
+    }
+
+    public get mangadex()
+    {
+        return this.config.mangadex;
+    }
+
+    public get database()
+    {
+        return this.config.database;
+    }
+
     protected performDefaultCheck():boolean
     {
         return this.config.mangadex.apiToken === "" ||
