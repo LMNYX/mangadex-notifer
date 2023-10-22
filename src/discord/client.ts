@@ -1,18 +1,11 @@
-import { Client, Events } from 'discord.js';
-import { discordClientConfig } from '@utils/defaults';
-import { PresetOutput } from '@utils/output';
+import { Client, ClientOptions, Collection } from 'discord.js';
+import { discordCommand } from '@utils/defaults';
 
-export default class DiscordClient
+export default class DiscordClient extends Client
 {
-    public constructor(private readonly token: string,
-        private readonly owner_id: string,
-        private readonly client: Client = new Client(discordClientConfig),
-        private readonly Output = new PresetOutput("dsc"))
+    public commands: Collection<string, discordCommand> = new Collection();
+    public constructor(options: ClientOptions)
     {
-        client.once(Events.ClientReady, c => {
-            Output.Log("Discord client ready.");
-        });
-
-        client.login(token);
+        super(options);
     }
 }

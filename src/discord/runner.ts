@@ -1,15 +1,16 @@
 import fs from 'node:fs';
-import { Client, Collection, Events } from 'discord.js';
+import { Collection, Events } from 'discord.js';
+
+import DiscordClient from '@discord/client';
 import { discordClientConfig, discordCommand } from '@utils/defaults';
 import { PresetOutput } from '@utils/output';
 
 export default class DiscordRunner
 {
-    private commands: Collection<string, discordCommand> = new Collection();
 
     public constructor(private readonly token: string,
         private readonly owner_id: string,
-        private readonly client: Client = new Client(discordClientConfig),
+        private readonly client: DiscordClient = new DiscordClient(discordClientConfig),
         private readonly Output = new PresetOutput("dsc"))
     {
         client.once(Events.ClientReady, c => {
@@ -41,7 +42,7 @@ export default class DiscordRunner
                 continue;
             }
 
-            this.commands.set(command.data.name, command);
+            this.client.commands.set(command.data.name, command);
         }
     }
 }

@@ -1,4 +1,4 @@
-import { ClientOptions, GatewayIntentBits } from "discord.js";
+import { ClientOptions, GatewayIntentBits, SlashCommandBuilder } from "discord.js";
 
 export const config = {
     "mangadex": {
@@ -22,9 +22,12 @@ export const config = {
 export const discordClientConfig: ClientOptions = {
     "intents": [
         GatewayIntentBits.Guilds,
-        GatewayIntentBits.GuildMessageReactions,
-        GatewayIntentBits.GuildMessages,
-        GatewayIntentBits.GuildMembers,
-        GatewayIntentBits.GuildPresences
+        GatewayIntentBits.GuildMessages
     ]
+}
+
+export interface discordCommand
+{
+    data: SlashCommandBuilder;
+    execute(interaction?: any): Promise<void>;
 }
