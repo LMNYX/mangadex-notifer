@@ -12,5 +12,7 @@ export default class DiscordClient
         client.once(Events.ClientReady, c => {
             Output.Log("Discord client ready.");
         });
+
+        client.login(token);
     }
 }
